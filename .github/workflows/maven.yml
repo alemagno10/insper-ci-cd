@@ -35,4 +35,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: alemagno10/partida-05-ci:latest
+        tags: alemagno10/partida-05-ci:${GITHUB_SHA}
