@@ -1,6 +1,8 @@
 name: Jacoco
 
 on:
+  push:
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
@@ -34,5 +36,3 @@ jobs:
       with:
         script: |
           core.setFailed('Overall coverage is less than 20%!')
-          script: |
-            core.setFailed('Overall coverage is less than 20%!')
