@@ -33,11 +33,20 @@ public class GameServiceTests {
         Assertions.assertEquals(game.getIdentifier(),response.getIdentifier());
     }
 
+    @Test
+    void getGameByTeam(){ 
+        List<Game> games = new ArrayList<>();
+        games.add(getGame());
+        Mockito.when(gameRepository.findByHomeOrAway("Kansas City Chiefs", "Kansas City Chiefs")).thenReturn(games);
+        List<Game> response = gameService.getGameByTeam("Kansas City Chiefs");
+        Assertions.assertEquals(games.get(0).getIdentifier(), response.get(0).getIdentifier());
+    }
+
     private static Game getGame() {
         Game game = new Game();
         game.setIdentifier("teste");
-        game.setHome("kCC");
-        game.setAway("Miami");
+        game.setHome("Kansas City Chiefs");
+        game.setAway("Dallas Cowboys");
         return game;
     }
 }
