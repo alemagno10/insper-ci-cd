@@ -46,7 +46,7 @@ public class TeamServiceTests {
         Assertions.assertEquals(1, resp.size());
     }
 
-
+    
 
 
 
@@ -57,6 +57,4 @@ public class TeamServiceTests {
         team.setName("Time 1");
         return team;
     }
-
-
 }
