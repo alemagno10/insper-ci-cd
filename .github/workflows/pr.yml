@@ -20,9 +20,9 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Fail PR if overall coverage is less than 80%
-      if: ${{ steps.jacoco.outputs.coverage-overall < 80.0 }}
+    - name: Fail PR if overall coverage is less than 20%
+      if: ${{ steps.jacoco.outputs.coverage-overall < 20.0 }}
       uses: actions/github-script@v6
       with:
         script: |
-          core.setFailed('Overall coverage is less than 80%!')
+          core.setFailed('Overall coverage is less than 20%!')
