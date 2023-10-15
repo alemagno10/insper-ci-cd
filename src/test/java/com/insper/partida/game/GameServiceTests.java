@@ -1,4 +1,4 @@
-package com.insper.partida.equipe;
+package com.insper.partida.game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import com.insper.partida.game.Game;
 import com.insper.partida.game.GameRepository;
 import com.insper.partida.game.GameService;
 import com.insper.partida.game.dto.GameReturnDTO;
+import com.insper.partida.game.dto.SaveGameDTO;
 
 @ExtendWith(MockitoExtension.class)
 public class GameServiceTests {
@@ -33,11 +34,20 @@ public class GameServiceTests {
         Assertions.assertEquals(game.getIdentifier(),response.getIdentifier());
     }
 
+    @Test
+    void getGameByTeam(){ 
+        List<Game> games = new ArrayList<>();
+        games.add(getGame());
+        Mockito.when(gameRepository.findByHomeOrAway("Kansas City Chiefs", "Kansas City Chiefs")).thenReturn(games);
+        List<Game> response = gameService.getGameByTeam("Kansas City Chiefs");
+        Assertions.assertEquals(games.get(0).getIdentifier(), response.get(0).getIdentifier());
+    }
+
     private static Game getGame() {
         Game game = new Game();
         game.setIdentifier("teste");
-        game.setHome("kCC");
-        game.setAway("Miami");
+        game.setHome("Kansas City Chiefs");
+        game.setAway("Dallas Cowboys");
         return game;
     }
 }
