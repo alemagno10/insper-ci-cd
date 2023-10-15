@@ -57,11 +57,5 @@ public class TeamControllerTests {
 
         String resp = result.getResponse().getContentAsString();
         Assertions.assertEquals(om.writeValueAsString(times), resp);
-
     }
-
-
-
-
-
 }

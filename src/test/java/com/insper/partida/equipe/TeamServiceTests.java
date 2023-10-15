@@ -46,10 +46,6 @@ public class TeamServiceTests {
         Assertions.assertEquals(1, resp.size());
     }
 
-    
-
-
-
     private static Team getTeam() {
         Team team = new Team();
         team.setId("1");

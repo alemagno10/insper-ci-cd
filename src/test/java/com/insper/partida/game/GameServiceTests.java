@@ -1,4 +1,4 @@
-package com.insper.partida.equipe;
+package com.insper.partida.game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import com.insper.partida.game.Game;
 import com.insper.partida.game.GameRepository;
 import com.insper.partida.game.GameService;
 import com.insper.partida.game.dto.GameReturnDTO;
+import com.insper.partida.game.dto.SaveGameDTO;
 
 @ExtendWith(MockitoExtension.class)
 public class GameServiceTests {
